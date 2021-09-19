@@ -1,2 +1,2 @@
 # tech_trends
-Built With Kubernetes and ArgoCD amongst others.
+Built With Kubernetes, ArgoCD and flask amongst others.
