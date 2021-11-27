@@ -11,4 +11,6 @@ spec:
     helm:
       valueFiles:
       - values-prod.yaml
-    path: . 
+    path: helm/manifest
+    repoURL: https://github.com/aburumman/tech_trends 
+    targetRevision: HEAD  

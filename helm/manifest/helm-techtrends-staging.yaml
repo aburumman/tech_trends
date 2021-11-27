@@ -11,6 +11,6 @@ spec:
     helm:
       valueFiles:
       - values-staging.yaml
-    path: . 
-    #repoURL: https://github.com/aburumman/helmdeployment 
-    #targetRevision: HEAD 
+    path: helm/manifest
+    repoURL: https://github.com/aburumman/tech_trends 
+    targetRevision: HEAD 
