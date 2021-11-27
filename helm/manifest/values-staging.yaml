@@ -1,0 +1,21 @@
+namespace:
+  name: staging
+ 
+service:
+  port: 5111
+  type: ClusterIP
+
+image:
+  repository: 09035077346/techtrends
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 300m
+    memory: 90Mi
+  requestlimit:
+    memory: 128Mi
+    cpu: 500m

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: techtrends
+  name: {{ .Values.namespace.name }}
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  replicas: {{ .Values.replicaCount }} 
+  selector:
+    matchLabels:
+      app: techtrends
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: techtrends
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{.Values.image.pullPolicy}}
+        name: python-helloworld
+        ports:
+        - containerPort: {{.Values.containerPort}}
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            port: {{.Values.containerPort}}
+            path: {{.Values.livenessProbe.path}}
+        readinessProbe:
+          httpGet:
+            path: {{.Values.containerPort}}
+            port: {{.Values.readinessProbe.path}}
+        resources:
+          requests:  
+            memory: {{.Values.resource.request.memory}}
+            cpu: {{.Values.resource.request.cpu}}
+          limits: 
+            memory: {{.Values.resource.limits.memory}}
+            cpu: {{.Values.resource.limits.cpu}}

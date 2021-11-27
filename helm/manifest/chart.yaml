@@ -1,0 +1,12 @@
+apiVersion: v1
+name: techtrends
+description: 
+
+keywords: 
+- techtrends
+
+
+version: 1.0.0 
+maintainers: 
+- name: mustapha
+  email: alayandemustapha@gmail.com

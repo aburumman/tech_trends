@@ -1,0 +1,4 @@
+apiVersion: v1
+kind: Application 
+metadata: 
+  name: {{.Values.namespace.name}}
